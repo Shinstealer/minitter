@@ -4,7 +4,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword
 } from "firebase/auth";
-import "firebase/compat/firestore";
+import { getFirestore } from "firebase/firestore";
 import "firebase/compat/storage";
 
 const firebaseConfig = {
@@ -20,3 +20,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const authService = getAuth();
+export const dbService = getFirestore();
