@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
+import { ref,deleteObject } from "@firebase/storage";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 const Minit = ({ minitObj, isOwner }) => {
@@ -9,7 +10,9 @@ const Minit = ({ minitObj, isOwner }) => {
     const ok = window.confirm("Are you sure you want to delete this minit?");
     const MinitTextRef = doc(dbService, "minit", `${minitObj.id}`);
     if (ok) {
+      const urlRef = ref(storageService, minitObj.attachmentUrl);
       await deleteDoc(MinitTextRef);
+      await deleteObject(urlRef);
     }
   }
 
@@ -45,7 +48,9 @@ const Minit = ({ minitObj, isOwner }) => {
           </>
         ) : (
           <>
-            <h4>{minitObj.text}</h4>{
+            <h4>{minitObj.text}</h4>
+              {minitObj.attachmentUrl && (<img src={minitObj.attachmentUrl} width="50px" height="50px" />)}
+            {
               isOwner && (
                 <>
                   (<button onClick={onDeleteClick}> Delete Minit</button>

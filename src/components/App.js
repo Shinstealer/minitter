@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       {init ? < AppRouter isLoggedIn={isLoggedIn} userObj={userObj} /> : "Loading..."}
-      <footer>&copy; {new Date().getFullYear()} Nwitter</footer>
+      <footer>&copy; {new Date().getFullYear()} minitter</footer>
     </>
   );
 }
