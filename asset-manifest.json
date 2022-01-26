@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Shinstealer/minitter/static/css/main.b3075f5b.css",
-    "main.js": "/Shinstealer/minitter/static/js/main.369ccabf.js",
-    "index.html": "/Shinstealer/minitter/index.html",
-    "main.b3075f5b.css.map": "/Shinstealer/minitter/static/css/main.b3075f5b.css.map",
-    "main.369ccabf.js.map": "/Shinstealer/minitter/static/js/main.369ccabf.js.map"
+    "main.css": "/minitter/static/css/main.b3075f5b.css",
+    "main.js": "/minitter/static/js/main.369ccabf.js",
+    "index.html": "/minitter/index.html",
+    "main.b3075f5b.css.map": "/minitter/static/css/main.b3075f5b.css.map",
+    "main.369ccabf.js.map": "/minitter/static/js/main.369ccabf.js.map"
   },
   "entrypoints": [
     "static/css/main.b3075f5b.css",
