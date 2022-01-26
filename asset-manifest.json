@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/minitter/static/css/main.b3075f5b.css",
-    "main.js": "/minitter/static/js/main.369ccabf.js",
+    "main.js": "/minitter/static/js/main.1611400d.js",
     "index.html": "/minitter/index.html",
     "main.b3075f5b.css.map": "/minitter/static/css/main.b3075f5b.css.map",
-    "main.369ccabf.js.map": "/minitter/static/js/main.369ccabf.js.map"
+    "main.1611400d.js.map": "/minitter/static/js/main.1611400d.js.map"
   },
   "entrypoints": [
     "static/css/main.b3075f5b.css",
-    "static/js/main.369ccabf.js"
+    "static/js/main.1611400d.js"
   ]
 }
