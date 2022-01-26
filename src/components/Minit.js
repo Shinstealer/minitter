@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { dbService, storageService } from "fbase";
-import { ref,deleteObject } from "@firebase/storage";
+import { ref, deleteObject } from "@firebase/storage";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Minit = ({ minitObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -32,30 +34,36 @@ const Minit = ({ minitObj, isOwner }) => {
   }
 
   return (
-    <div >
+    <div className="minit" >
       {
         editing ? (
           <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="container minitEdit">
               <input type="text"
                 placeholder="Eidt your minit"
                 value={newMinit}
                 onChange={onChange}
                 required></input>
-              <input type="submit" value="Update minit"></input>
+              <input type="submit" value="Update minit" className="formBtn"></input>
             </form>
-            <button onClick={toggleEditing}>Cancel</button>
+            <span onClick={toggleEditing} className="formBtn cancelBtn">
+              Cancel
+            </span>
           </>
         ) : (
           <>
             <h4>{minitObj.text}</h4>
-              {minitObj.attachmentUrl && (<img src={minitObj.attachmentUrl} width="50px" height="50px" />)}
+            {minitObj.attachmentUrl && (<img src={minitObj.attachmentUrl} />)}
             {
               isOwner && (
-                <>
-                  (<button onClick={onDeleteClick}> Delete Minit</button>
-                  <button onClick={toggleEditing}>Edit Minit</button>)
-                </>
+                <div className="minit__actions">
+                  <span onClick={onDeleteClick}>
+                    <FontAwesomeIcon icon={faTrash} />
+                  </span>
+                  <span onClick={toggleEditing}>
+                    <FontAwesomeIcon icon={faPencilAlt} />
+                  </span>
+                </div>
               )
             }
           </>

@@ -20,6 +20,7 @@ function App() {
         });
       } else {
         setIsLoggedIn(false);
+        setUserObj(null);
       }
       setInit(true);
 
@@ -38,7 +39,11 @@ function App() {
   return (
     <>
       {init ? < AppRouter refreshUser={refreshUser} isLoggedIn={isLoggedIn} userObj={userObj} /> : "Loading..."}
-      <footer>&copy; {new Date().getFullYear()} minitter</footer>
+      <footer style={{
+        marginTop: "30px",
+        textAlign: "center",
+        color: "white",
+      }}>&copy; {new Date().getFullYear()} minitter</footer>
     </>
   );
 }
